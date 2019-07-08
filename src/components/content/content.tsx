@@ -1,5 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import { Table, Input, Button, Popconfirm, Form } from 'antd';
+import { setStorage, getStorage } from '../../sessionStorage/api'
 import store from '../../store/index'
 import obj from '../../config'
 import './content.less'
@@ -109,15 +110,27 @@ const EditableCell: React.FC= (props) => {
 
 
 const Content: React.FC= () => {
+    // //解决头条数据无法被sessionStorage初始化的问题
+    // if (getStorage(0)!== undefined) {
+    //   const action = {
+    //     type:"bug_bug",
+    //     value:getStorage(0)
+    //   }
+    //   store.dispatch(action)
+    // }
     let big_key = store.getState().admin //每个模块对应的key (表格头部字段内容)
     let Big:any = store.getState().content //获取redux中的内容列表
     const [dataSource , setData] = useState<any>(Big[big_key]) //默认初始化进入admin后显示的是key为0时的表格结构
-    const [count , setCount] = useState<number>(1)
+    const [count , setCount] = useState<any>(1)
     const [columnsx , setColu] = useState<any>(obj.content[0])
     //每次更新状态（即 ）
     const changeM = () =>{
+      
         big_key = store.getState().admin
+        // getStorage(big_key)
+
         Big = store.getState().content
+        setStorage(big_key,JSON.stringify(Big[big_key]))
         setColu(obj.content[big_key])
         setData(Big[big_key])
     }
@@ -139,6 +152,11 @@ const Content: React.FC= () => {
     const handleDelete =( key:any ) =>{
         const dataSources = [...dataSource];
         let content = dataSources.filter(item => item.key !== key)
+        const action1 = {
+          type:"delete",
+          key:big_key+"-"+key
+        }
+        store.dispatch(action1)
         const action = {
           type:"change_content",
           value:big_key,
@@ -154,6 +172,11 @@ const Content: React.FC= () => {
             key: counts
         };
         let content = [...dataSources, newData]
+        const action1 = {
+          type:"add",
+          key:newData.key+"-"+big_key
+        }
+        store.dispatch(action1)
         const action = {
           type:"change_content",
           value:big_key,
@@ -161,6 +184,7 @@ const Content: React.FC= () => {
         }
         store.dispatch(action)
         setCount(counts+1)
+        setStorage("count",counts+1)
     }
     
     const handleSave = (row:any) =>{
@@ -203,9 +227,16 @@ const Content: React.FC= () => {
         }),
       };
     });
+
+    //--------------------------------------
+
     useEffect(()=>{
-      console.log(big_key,Big)
+      if (getStorage("count")!==null) {
+        setCount(Number(getStorage("count")))
+      }
     })
+    //--------------------------------------
+
     return ( 
         <div>
         <Button onClick={handleAdd} type="primary" style={{ marginBottom: 16 }}>

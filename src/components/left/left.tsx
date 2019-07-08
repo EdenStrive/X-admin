@@ -1,5 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import { Menu, Icon } from 'antd';
+import { getStorage } from '../../sessionStorage/api'
 import obj from '../../config'
 import store from '../../store/index'
 import 'antd/dist/antd.css';
@@ -28,11 +29,20 @@ const Left: React.FC= () => {
 
     const change_content = (key:any)=>{
         let keys = key.key
-        const action = {
-          type:"change_admin",
-          value:keys
+        if (getStorage(keys) == undefined) {
+            const action = {
+              type:"change_admin",
+              value:keys
+            }
+            store.dispatch(action)
+        }else{
+            const action = {
+              type:"change_session",
+              value:keys,
+              local: getStorage(keys)
+            }
+            store.dispatch(action)
         }
-        store.dispatch(action)
     }
 
     useEffect(()=>{
