@@ -21,6 +21,26 @@
 - [x] 功能已全部实现
 - [x] 暴露接口
 
+------
+**框架使用：**
+
+环境要求：
+
+> * node版本 10+
+> * npm版本 6+
+
+```javascript
+1.首先git clone下来
+2.使用脚手架目录打开cmd，输入命令npm install（如果失败请使用管理员权限打开cmd）
+3.在命令行中输入npm start
+```
+
+打开界面：![cmd-markdown-logo](http://i1.cy.com/x/jiemian.jpg)
+
+红色框框处使我们第一个需要配置的地方：
+
+    1.打开src目录下面的config.js
+
 
 
 
