@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import { Menu, Icon } from 'antd';
 import obj from '../../config'
+import store from '../../store/index'
 import 'antd/dist/antd.css';
 import './left.less';
 
@@ -25,6 +26,15 @@ const Left: React.FC= () => {
           }
     }
 
+    const change_content = (key:any)=>{
+        let keys = key.key
+        const action = {
+          type:"change_admin",
+          value:keys
+        }
+        store.dispatch(action)
+    }
+
     useEffect(()=>{
         // console.log(obj.sub) //sub就是配置文件中的左边导航
         let sub:any[] = obj.sub
@@ -40,7 +50,7 @@ const Left: React.FC= () => {
             for(let id in child){
                 let key = child[id][0]
                 let content = child[id][1]
-                let childs = (<Menu.Item key={key}>{content}</Menu.Item>)
+                let childs = (<Menu.Item key={key} onClick={change_content.bind(key)}>{content}</Menu.Item>)
                 child_arr.push(childs)
             }
             let part = ( <SubMenu key={big_key} title= { <span>  <Icon type={big_type}/><span>{big_name}</span></span> } >

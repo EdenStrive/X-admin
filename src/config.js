@@ -2,29 +2,96 @@ const obj = {
     //左边导航内容
     sub:[
         ["sub1","mail","Navigation one",[
-            [1,"option 1"],
-            [2,"option 2"]
+
+            [0,"title one"],
+            [1,"option 2"]
+
         ]],
         ["sub2","appstore","Navigation two",[
-            [5,"option 5"],
-            [6,"option 6"]
-        ]],
-        ["sub3","appstore","Navigation two",[
-            [7,"option 5"],
-            [8,"option 6"]
-        ]],
-        ["sub4","mail","Navigation two",[
-            [9,"option 5"],
-            [10,"option 6"]
-        ]],
-        ["sub5","appstore","Navigation two",[
-            [11,"option 5"],
-            [12,"option 6"]
+
+            [2,"option 5"],
+            [3,"option 6"]
+
         ]]
     ],
 
     //表格内容
     content:[
+        [   
+            {
+              title: 'name',
+              dataIndex: 'name',
+              width: '30%',
+              editable: true,
+            },
+            {
+              title: 'age',
+              dataIndex: 'age',
+              editable: true,
+            },
+            {
+              title: 'address',
+              dataIndex: 'address',
+              editable: true,
+            }
+        ],
+
+        [   
+            {
+              title: 'two',
+              dataIndex: 'two',
+              width: '20%',
+              editable: true,
+            },
+            {
+              title: 'tw-pat',
+              dataIndex: 'tw-pat',
+              editable: true,
+            },
+            {
+              title: 'three-pat',
+              dataIndex: 'three-pat',
+              editable: true,
+            }
+        ],
+
+        [   
+            {
+              title: 'x',
+              dataIndex: 'x',
+              width: '20%',
+              editable: true,
+            },
+            {
+              title: 'z',
+              dataIndex: 'z',
+              editable: true,
+            },
+            {
+              title: 'z',
+              dataIndex: 'three-pat',
+              editable: true,
+            }
+        ],
+
+        [   
+            {
+              title: 't',
+              dataIndex: 't',
+              width: '20%',
+              editable: true,
+            },
+            {
+              title: 'y',
+              dataIndex: 'y',
+              editable: true,
+            },
+            {
+              title: 'u',
+              dataIndex: 'u',
+              editable: true,
+            }
+        ],
 
     ]
 } 
