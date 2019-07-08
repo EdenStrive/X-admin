@@ -1,5 +1,5 @@
 # X-admin
-基于React（hook）+Typescript+antd的后台管理系统的脚手架，秩序配置文件即可
+基于React（hook）+Typescript+antd的后台管理系统的脚手架，只需配置文件即可
 
 
 2019-06-24  
