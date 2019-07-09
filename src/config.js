@@ -1,16 +1,15 @@
 const obj = {
     //左边导航内容
     sub:[
-        ["sub1","mail","Navigation one",[
+        ["sub1","mail","Part One",[
 
-            [0,"title one"],
-            [1,"option 2"]
+            [0,"班级"],
+            [1,"水果"]
 
         ]],
-        ["sub2","appstore","Navigation two",[
+        ["sub2","appstore","Part Two",[
 
-            [2,"option 5"],
-            [3,"option 6"]
+            [2,"工单"],
 
         ]]
     ],
@@ -19,79 +18,58 @@ const obj = {
     content:[
         [   
             {
-              title: 'name',
-              dataIndex: 'name',
+              title: '姓名',
+              dataIndex: '姓名',
               width: '30%',
               editable: true,
             },
             {
-              title: 'age',
-              dataIndex: 'age',
+              title: '年龄',
+              dataIndex: '年龄',
               editable: true,
             },
             {
-              title: 'address',
-              dataIndex: 'address',
+              title: '学号',
+              dataIndex: '学号',
               editable: true,
             }
         ],
 
         [   
             {
-              title: 'two',
-              dataIndex: 'two',
+              title: '果名',
+              dataIndex: '果名',
               width: '20%',
               editable: true,
             },
             {
-              title: 'tw-pat',
-              dataIndex: 'tw-pat',
+              title: '大小',
+              dataIndex: '大小',
               editable: true,
             },
             {
-              title: 'three-pat',
-              dataIndex: 'three-pat',
+              title: '价格',
+              dataIndex: '价格',
               editable: true,
             }
         ],
 
         [   
             {
-              title: 'x',
-              dataIndex: 'x',
+              title: '名称',
+              dataIndex: '名称',
               width: '20%',
               editable: true,
             },
             {
-              title: 'z',
-              dataIndex: 'z',
-              editable: true,
-            },
-            {
-              title: 'z',
-              dataIndex: 'three-pat',
+              title: '价格',
+              dataIndex: '价格',
               editable: true,
             }
-        ],
+            
+        ]
 
-        [   
-            {
-              title: 't',
-              dataIndex: 't',
-              width: '20%',
-              editable: true,
-            },
-            {
-              title: 'y',
-              dataIndex: 'y',
-              editable: true,
-            },
-            {
-              title: 'u',
-              dataIndex: 'u',
-              editable: true,
-            }
-        ],
+       
 
     ]
 } 

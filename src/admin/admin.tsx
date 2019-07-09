@@ -34,7 +34,7 @@ const App: React.FC= () => {
         {/* 内容 */}
         <div className="right">
 
-          {welcome ? <Content /> : "点击左侧导航进行每个表格的新增、编辑与删除"}
+          {welcome ? <Content /> : <p className="xxx">点击左侧导航进行每个表格的新增、编辑与删除</p>}
         </div>
 
       </div>

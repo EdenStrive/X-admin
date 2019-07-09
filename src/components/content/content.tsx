@@ -238,17 +238,17 @@ const Content: React.FC= () => {
     //--------------------------------------
 
     return ( 
-        <div>
-        <Button onClick={handleAdd} type="primary" style={{ marginBottom: 16 }}>
-          Add a row
-        </Button>
-        <Table
-          components={components}
-          rowClassName={() => 'editable-row'}
-          bordered
-          dataSource={dataSources}
-          columns={columnss}
-        />
+        <div className="t_content">
+          <Button onClick={handleAdd} type="primary" style={{ marginBottom: 16 }}>
+            Add a row
+          </Button>
+          <Table
+            components={components}
+            rowClassName={() => 'editable-row'}
+            bordered
+            dataSource={dataSources}
+            columns={columnss}
+          />
         </div>
     );
 }
