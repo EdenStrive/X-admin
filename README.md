@@ -60,7 +60,7 @@
     
     表格字段可选width，title，以及是否可以被编辑editable
     
-----
+---- 
 
     1.都设置完成后打开界面
 ![cmd-markdown-logo](http://i1.cy.com/x/zhanshi.png)
